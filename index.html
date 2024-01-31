@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js"></script>
+
+        <title>Password Generator</title>
+    </head>
+    <body>
+        <header><h3>Password Generator</h3></header>
+        <div id="genPassword">
+            <div><h2 id="genPassword-el">P4$5W0rD!</h2></div>
+            <div><button title="Click to Copy" id="copyBtn" class="material-symbols-outlined" onclick="copyClip()">content_copy</button></div>
+        </div>
+        <div id="userCustomizationCont">
+            <div id="charLengthCont">
+                <p>Character Length</p>
+                <h1 id="passLength-el">0</h1>
+            </div>
+
+            <div class="slideCont">
+                <input type="range" id="charLengthSlide" min="0" max="15" value="0" step="1">
+            </div>
+            <form id="inputChoicesForm">
+                <label for="uppercase" class="inputChoices">Include Uppercase Letters
+                    <input type="checkbox" id="uppercase" class="inputCheckBox" onclick="isUpper()">
+                    <span class="checkmark"></span>
+                </label><br>
+                <label for="lowercase" class="inputChoices">Include Lowercase Letters
+                    <input type="checkbox" id="lowercase" class="inputCheckBox" onclick="isLower()">
+                    <span class="checkmark"></span>
+                </label><br>
+                <label for="numbers" class="inputChoices">Include Numbers
+                    <input type="checkbox" id="numbers" class="inputCheckBox" onclick="withNum()">
+                    <span class="checkmark"></span>
+                </label><br>
+                <label for="symbols" class="inputChoices">Include Symbols
+                    <input type="checkbox" id="symbols" class="inputCheckBox" onclick="withSymbs()">
+                    <span class="checkmark"></span>
+                </label>
+            </form>
+            <div id="passStrengthCont">
+                <p>STRENGTH</p>
+                <div class="passIndicator">
+                    <h3 id="passStrength"></h3>
+                    <span class="weak"></span>
+                    <span class="weak-med"></span>
+                    <span class="medium"></span>
+                    <span class="strong"></span>
+                </div>
+            </div>
+                <button id="genBtn" onclick="generatePass()">Generate &#8594;</button>
+        </div>
+        <footer class="attribution">
+            <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+                Coded by <a href="https://www.linkedin.com/in/nicole-fortin-3530b9211" target="_blank">Nicole Javier Belmonte Fortin</a>.
+            </p>
+        </footer>
+        <script type="text/javascript" src="index.js" defer></script>
+</html>
